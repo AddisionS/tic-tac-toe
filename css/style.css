@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+:root {
+    --background-color: #023e8a;
+    --button-background: #ADD8E6;
+    --button-text-color: #003366;
+    --text-color: #D3D3D3;
+    --heading-color: #00BFFF;
+    --border-color: #005B96;
+    --button-hover: #add8e6c4;
+    --text-shadow: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #023e8a;
+        --button-background: #ADD8E6;
+        --button-text-color: #003366;
+        --text-color: #D3D3D3;
+        --heading-color: #00BFFF;
+        --border-color: #005B96;
+        --button-hover: #add8e6c4;
+        --text-shadow: #ffffff;
+    }
+}
+
+body {
+   background-color: var(--background-color);
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4vw;
+}
+
+button {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 40px;
+    font-size: 3rem;
+    font-family: "Fredoka", sans-serif;
+    cursor: pointer;
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    text-shadow: 
+    -1px -1px 0 var(--text-shadow),  
+    1px -1px 0 var(--text-shadow),
+    -1px  1px 0 var(--text-shadow),
+    1px  1px 0 var(--text-shadow);
+    border: 2px solid var(--border-color);
+    transition: transform 0.2s ease-in-out;
+}
+
+@media (hover:hover) {
+    button:hover{
+        background-color: var(--button-hover);
+        transform: scale(1.1);
+    }
+}
+
+@media (hover:none) {
+    button:hover{
+        background-color: var(--button-background);
+        transform: scale(1);
+    }
+}
+
+h1 {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 900;
+    font-size: 6.5rem;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+    color: var(--heading-color);
+    text-shadow: 
+        -1px -1px 0 var(--text-shadow),  
+         1px -1px 0 var(--text-shadow),
+        -1px  1px 0 var(--text-shadow),
+         1px  1px 0 var(--text-shadow);
+}
+
+p {
+    font-family: "Fredoka", sans-serif;
+    color: var(--text-color);
+}
+
+@media (max-width: 550px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    button {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 350px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    button {
+        font-size: 1.4rem;
+    }
+}

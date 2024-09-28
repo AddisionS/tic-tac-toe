@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+:root {
+    --background-color: #023e8a;
+    --button-background: #ADD8E6;
+    --button-text-color: #003366;
+    --text-color: #D3D3D3;
+    --heading-color: #00BFFF;
+    --border-color: #005B96;
+    --button-hover: #add8e6c4;
+    --text-shadow: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #023e8a;
+        --button-background: #ADD8E6;
+        --button-text-color: #003366;
+        --text-color: #D3D3D3;
+        --heading-color: #00BFFF;
+        --border-color: #005B96;
+        --button-hover: #add8e6c4;
+        --text-shadow: #ffffff;
+    }
+}
+
+body {
+   background-color: var(--background-color);
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5vw;
+    text-align: center;
+    padding: 0;
+}
+
+
+button {
+    padding: 12px;
+    margin: 10px;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-family: "Fredoka", sans-serif;
+    cursor: pointer;
+    background-color: var(--button-background);
+    color: #003366;
+    text-shadow: 
+    -1px -1px 0 var(--text-shadow),  
+    1px -1px 0 var(--text-shadow),
+    -1px  1px 0 var(--text-shadow),
+    1px  1px 0 var(--text-shadow);
+    border: 2px solid var(--border-color);
+    transition: transform 0.2s ease-in-out;
+}
+
+@media (hover:hover) {
+    button:hover{
+        background-color: var(--button-hover);
+        transform: scale(1.1);
+    }
+
+    .box:hover {
+        background-color: var(--button-hover);
+    }
+}
+
+@media (hover:none) {
+    button {
+        background-color: var(--button-background); 
+        transform: scale(1); 
+    }
+
+    .box {
+        background-color: var(--background-color); 
+    }
+
+    button:hover{
+        background-color: var(--button-background);
+        transform: scale(1);
+    }
+
+    .box:hover {
+        background-color: var(--background-color);
+    }
+}
+
+h1 {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 900;
+    font-size: 4rem;
+    padding-bottom: 0;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0;
+    color: var(--heading-color);
+    text-shadow: 
+        -1px -1px 0 var(--text-shadow),  
+         1px -1px 0 var(--text-shadow),
+        -1px  1px 0 var(--text-shadow),
+         1px  1px 0 var(--text-shadow);
+}
+
+h2 {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    padding: 0;
+    margin-top: 5px;
+    color: var(--heading-color);
+    text-shadow: 
+        -1px -1px 0 var(--text-shadow),  
+         1px -1px 0 var(--text-shadow),
+        -1px  1px 0 var(--text-shadow),
+         1px  1px 0 var(--text-shadow);
+}
+
+.gameContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 9vw);
+    grid-template-rows: repeat(3, 9vw);
+    padding-bottom: 2vw;
+    padding-top: 2vw;
+    margin-bottom: 0;
+    font-family: "Fredoka", sans-serif;
+}
+
+.box {
+    border: 2px var(--text-shadow) solid;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vw;
+}
+
+.br0 {
+    border-right: 0;
+}
+
+.bl0 {
+    border-left: 0;
+}
+
+.bt0 {
+    border-top: 0;
+}
+
+.bm0 {
+    border-bottom: 0;
+}
+
+.tlc {
+    border-radius: 25px 0px 0px 0px;
+}
+
+.trc {
+    border-radius: 0px 25px 0px 0px;
+}
+
+.blc {
+    border-radius: 0px 0px 0px 25px;
+}
+
+.brc {
+    border-radius: 0px 0px 25px 0px;
+} 
+
+.box.win {
+    background-color: var(--button-background);
+    cursor: default;
+    pointer-events: none;
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+
+    .gameContainer {
+        grid-template-columns: repeat(3, 22vw);
+        grid-template-rows: repeat(3, 22vw);
+        padding-bottom: 5vw;
+        padding-top: 5vw;
+    }
+
+    .box {
+        font-size: 12.22vw;
+    }
+
+    .container {
+        padding-top: 10vw;
+    }
+}
